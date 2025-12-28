@@ -1,13 +1,56 @@
-Social Network Centrality Analysis (VK Simulation)
- This project simulates collecting information about friends and friends-of-friends
- from VK for members of a student group. The goal is to build a social network graph
- and evaluate centrality metrics for the group members.
+## Аннотация
+В данном проекте проведен анализ социальной сети друзей на платформе Facebook. 
+Использованы реальные данные пользователя, построена графовая модель сети, 
+рассчитаны метрики центральности и проведена визуализация результатов.
 
-What the project does?
-Creates a simulated VK-style social network.- Builds a graph using NetworkX.- Computes:- Betweenness Centrality- Closeness Centrality- Eigenvector Centrality- Prints results only for the members of the group (as required).- Draws a complete graph of all users (friends + friends-of-friends).
+## 1. Введение
 
- How to Run?
- 1. Install required libraries:
- pip install networkx , matplotlib
- 2. Run the script:
- python 2.py
+### 1.1 Цель проекта
+Провести анализ социальной сети пользователя Facebook с расчетом:
+- Центральности посредничества (Betweenness Centrality)
+- Центральности близости (Closeness Centrality) 
+- Собственного векторного центра (Eigenvector Centrality)
+
+### 1.2 Актуальность
+Анализ социальных сетей позволяет понять структуру социальных связей, 
+выявить ключевых участников и механизмы распространения информации.
+
+## 2. Методология
+
+### 2.1 Источники данных
+- **Основной источник**: Facebook (файл `your_friends.json`)
+- **Период данных**: сентябрь 2022 - ноябрь 2023
+- **Количество друзей**: 10 человек (выборка из 75)
+
+### 2.2 Инструменты анализа
+- **Язык программирования**: Python 3.13
+- **Библиотеки**: 
+  - NetworkX (анализ графов)
+  - Pandas (обработка данных)
+  - Matplotlib (визуализация)
+- **Алгоритмы**: Алгоритмы центральности графа
+
+### 2.3 Методы сбора данных
+1. Экспорт данных из Facebook через функцию "Загрузить вашу информацию"
+2. Парсинг JSON-файла `your_friends.json`
+3. Классификация друзей по группам
+4. Моделирование связей между друзьями
+
+## 3. Структура данных
+
+### 3.1 Исходные данные
+```json
+{
+  "friends_v2": [
+    {"name": "Ismail Saimeh", "timestamp": 1669214792},
+    {"name": "Jaafr Mk", "timestamp": 1668955094},
+    {"name": "Saeed Al-Sheikh", "timestamp": 1668217506},
+    {"name": "Ameen Almoustafa", "timestamp": 1668191619},
+    {"name": "Nada Saibaa", "timestamp": 1667204218},
+    {"name": "Ola B Ali", "timestamp": 1667158948},
+    {"name": "Tarnim Sulayman", "timestamp": 1666014810},
+    {"name": "Sheikh Mohamed Siddiq", "timestamp": 1665065912},
+    {"name": "Mohamad Alshiekh", "timestamp": 1663957886},
+    {"name": "Ali Alsheikh", "timestamp": 1663608646}
+  ]
+}
